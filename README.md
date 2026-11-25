@@ -8,7 +8,7 @@
 
 # Author
 
-[Emanuel Roth](https://emanuel-roth.github.io/) (University of Edinburgh)
+[Emanuel Roth](https://emanuel-roth.github.io/) (University of Edinburgh), mostly vibecoded with [ChatGPT] (https://chatgpt.com/) and [claude](https://claude.com/>).
 
 # Instructions
 
