@@ -16,11 +16,14 @@ To install it, make sure you have CPoly
 ```
 sage --pip install git+...
 ```
-and then you can simply run
+and then, to get started, import everything needed from Sage followed by *CPoly*:
 ```
+from sage.all import *
 from cpoly import *
 ```
-to get started.
+The first line loads the SageMath environment, which is needed when working outside the interactive `sage` prompt (e.g. in a Python script or a notebook with a Python kernel); inside a `sage` session it is already loaded but harmless to run.
+
+**Note:** the order matters. *CPoly* provides its own `RootSystem` class extending Sage's, so running `from sage.all import *` *after* `from cpoly import *` would overwrite it with Sage's `RootSystem`.
 
 Alternatively, you can run it from your browser in a notebook here using binder.
 
@@ -28,7 +31,7 @@ Alternatively, you can run it from your browser in a notebook here using binder.
 
 You can read the documentation of *CPoly* as:
 
-* a webpage
+* a [webpage](https://emanuel-roth.github.io/cpoly/)
 * a pdf
 
 # How to cite CPoly

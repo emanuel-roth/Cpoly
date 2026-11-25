@@ -7,9 +7,12 @@
 import os
 import sys
 try:
-    import sage.all
+    import sage.all  # noqa: F401
+    HAVE_SAGE = True
 except ImportError:
-    sage = None
+    # Building without SageMath (e.g. on GitHub Actions): autodoc only needs
+    # the docstrings, so Sage is replaced by mock objects.
+    HAVE_SAGE = False
 
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + "/.."))
 
@@ -70,10 +73,13 @@ html_css_files = [
 html_theme_options = {
     "light_logo": "cpolylogo.svg",
     "dark_logo": "cpolylogodark.svg",
+    "sidebar_hide_name": True,
 }
 html_favicon = "_static/favicon.ico"
 html_show_sourcelink = False
 viewcode_follow_imported_members = False
+if not HAVE_SAGE:
+    autodoc_mock_imports = ["sage"]
 autodoc_default_options = {
     "members": True,
     "inherited-members": True,
