@@ -1291,9 +1291,7 @@
 <span class="sd">            - ``comp_poly`` -- a complementary polyhedron of the ambient root system, represented as a dictionary whose keys are Weyl chambers and whose values are points in the ambient root space</span>
 <span class="sd">            - ``facet`` -- a facet of the ambient Weyl chamber decomposition, represented as a tuple of vertices in the weight lattice</span>
 
-<span class="sd">        OUTPUT:</span>
-
-<span class="sd">            A dictionary representing the complementary polyhedron induced on ``P^\perp``</span>
+<span class="sd">        OUTPUT: A dictionary representing the complementary polyhedron induced on ``P^\perp``</span>
 
 <span class="sd">        EXAMPLE::</span>
 
@@ -1483,7 +1481,9 @@
 <span class="sd">        OUTPUT: A list of facets satisfying both ``J1`` and ``J2``, if ``check`` is ``True``, we validate that ``comp_poly`` is a complementary polyhedron.</span>
 
 <span class="sd">        EXAMPLE::</span>
+
 <span class="sd">            sage: from cpoly import RootSystem, greater_than</span>
+
 <span class="sd">            sage: A2 = RootSystem([&#39;A&#39;, 2])</span>
 <span class="sd">            sage: W = A2.weight_lattice()</span>
 <span class="sd">            sage: V = A2.root_space()</span>
@@ -1514,7 +1514,9 @@
 <span class="sd">        OUTPUT: A list of facets satisfying both ``J1`` and ``J2``.</span>
 
 <span class="sd">        EXAMPLE::</span>
+
 <span class="sd">            sage: from cpoly import RootSystem, greater_than</span>
+<span class="sd">            </span>
 <span class="sd">            sage: A2 = RootSystem([&#39;A&#39;, 2])</span>
 <span class="sd">            sage: W = A2.weight_lattice()</span>
 <span class="sd">            sage: V = A2.root_space()</span>

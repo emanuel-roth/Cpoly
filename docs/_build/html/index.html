@@ -232,7 +232,8 @@
         <article role="main" id="furo-main-content">
           <section id="cpoly">
 <h1>CPoly<a class="headerlink" href="#cpoly" title="Link to this heading">¶</a></h1>
-<p><cite>CPoly</cite> is a SageMath package for complementary polyhedra, available here <a class="reference external" href="https://github.com/emanuel-roth/CPolyhedraTools">https://github.com/emanuel-roth/CPolyhedraTools</a>. It computes their stability conditions, numerical invariants, degrees, canonical facets and Jordan-Hölder facets, following Kai Behrend’s paper on <a class="reference external" href="https://link.springer.com/article/10.1007/BF01446630">Semi-stability for reductive group schemes</a>.</p>
+<p><cite>CPoly</cite> is a SageMath package for complementary polyhedra, available <a class="reference external" href="https://github.com/emanuel-roth/CPolyhedraTools">here</a>. It computes their stability conditions, numerical invariants, degrees, canonical facets and Jordan-Hölder facets, following Kai Behrend’s paper on <a class="reference external" href="https://link.springer.com/article/10.1007/BF01446630">Semi-stability for reductive group schemes</a>. The Jordan-Hölder theory aspects and extensions are following Section 2 of <a class="reference external" href="https://arxiv.org/abs/2609.17231">this paper</a>.</p>
+<p>We were inspired by <a class="reference external" href="https://quivercombinatoricstools.github.io/">QuiverCombinatoricsTools</a>.</p>
 <p>To install it, run</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span> <span class="o">--</span><span class="n">pip</span> <span class="n">install</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">emanuel</span><span class="o">-</span><span class="n">roth</span><span class="o">/</span><span class="n">CPolyhedraTools</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
@@ -244,7 +245,7 @@
 <p>to get started.</p>
 <p><strong>Author</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://emanuel-roth.github.io/">Emanuel Roth</a> (University of Edinburgh)</p></li>
+<li><p><a class="reference external" href="https://emanuel-roth.github.io/">Emanuel Roth</a> (University of Edinburgh), using <a class="reference external" href="https://chatgpt.com/">ChatGPT</a> and <a class="reference external" href="https://claude.com/">claude</a>.</p></li>
 </ul>
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h2>
@@ -903,10 +904,7 @@ of <code class="docutils literal notranslate"><span class="pre">self</span></cod
 </ul>
 </dd>
 </dl>
-<p>OUTPUT:</p>
-<blockquote>
-<div><p>A dictionary representing the complementary polyhedron induced on <code class="docutils literal notranslate"><span class="pre">P^\perp</span></code></p>
-</div></blockquote>
+<p>OUTPUT: A dictionary representing the complementary polyhedron induced on <code class="docutils literal notranslate"><span class="pre">P^\perp</span></code></p>
 <p>EXAMPLE:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span><span class="w"> </span><span class="nn">cpoly</span><span class="w"> </span><span class="kn">import</span> <span class="n">RootSystem</span><span class="p">,</span> <span class="n">greater_than</span>
 
@@ -1051,18 +1049,19 @@ of <code class="docutils literal notranslate"><span class="pre">self</span></cod
 </dd>
 </dl>
 <p>OUTPUT: A list of facets satisfying both <code class="docutils literal notranslate"><span class="pre">J1</span></code> and <code class="docutils literal notranslate"><span class="pre">J2</span></code>, if <code class="docutils literal notranslate"><span class="pre">check</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, we validate that <code class="docutils literal notranslate"><span class="pre">comp_poly</span></code> is a complementary polyhedron.</p>
-<dl class="simple">
-<dt>EXAMPLE::</dt><dd><p>sage: from cpoly import RootSystem, greater_than
-sage: A2 = RootSystem([‘A’, 2])
-sage: W = A2.weight_lattice()
-sage: V = A2.root_space()
-sage: Lambda = W.fundamental_weights()
-sage: alpha = V.simple_roots()
-sage: comp_poly = {(Lambda[1], Lambda[2]): 1/2*alpha[2], (-Lambda[1] + Lambda[2], -Lambda[1]): alpha[1]+alpha[2], (-Lambda[2], Lambda[1] - Lambda[2]): alpha[2], (-Lambda[1] + Lambda[2], Lambda[2]): 1/2*(alpha[1]+alpha[2]), (Lambda[1], Lambda[1] - Lambda[2]): alpha[2], (-Lambda[2], -Lambda[1]): alpha[1]+alpha[2]}
-sage: A2.canonical_facets(comp_poly)
-(Lambda[2],)</p>
-</dd>
-</dl>
+<p>EXAMPLE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span><span class="w"> </span><span class="nn">cpoly</span><span class="w"> </span><span class="kn">import</span> <span class="n">RootSystem</span><span class="p">,</span> <span class="n">greater_than</span>
+
+<span class="n">sage</span><span class="p">:</span> <span class="n">A2</span> <span class="o">=</span> <span class="n">RootSystem</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">W</span> <span class="o">=</span> <span class="n">A2</span><span class="o">.</span><span class="n">weight_lattice</span><span class="p">()</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">V</span> <span class="o">=</span> <span class="n">A2</span><span class="o">.</span><span class="n">root_space</span><span class="p">()</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">Lambda</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">fundamental_weights</span><span class="p">()</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">simple_roots</span><span class="p">()</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">comp_poly</span> <span class="o">=</span> <span class="p">{(</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="p">(</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">(</span><span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">alpha</span><span class="p">[</span><span class="mi">2</span><span class="p">]}</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">A2</span><span class="o">.</span><span class="n">canonical_facets</span><span class="p">(</span><span class="n">comp_poly</span><span class="p">)</span>
+<span class="p">(</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -1077,18 +1076,19 @@ sage: A2.canonical_facets(comp_poly)
 </dd>
 </dl>
 <p>OUTPUT: A list of facets satisfying both <code class="docutils literal notranslate"><span class="pre">J1</span></code> and <code class="docutils literal notranslate"><span class="pre">J2</span></code>.</p>
-<dl class="simple">
-<dt>EXAMPLE::</dt><dd><p>sage: from cpoly import RootSystem, greater_than
-sage: A2 = RootSystem([‘A’, 2])
-sage: W = A2.weight_lattice()
-sage: V = A2.root_space()
-sage: Lambda = W.fundamental_weights()
-sage: alpha = V.simple_roots()
-sage: comp_poly = {(Lambda[1], Lambda[2]): -alpha[1], (-Lambda[1] + Lambda[2], -Lambda[1]): alpha[1], (-Lambda[2], Lambda[1] - Lambda[2]): -alpha[1], (-Lambda[1] + Lambda[2], Lambda[2]): alpha[1], (Lambda[1], Lambda[1] - Lambda[2]): -alpha[1], (-Lambda[2], -Lambda[1]): alpha[1]}
-sage: A2.JH_facets(comp_poly)
-[(-Lambda[2],), (Lambda[2],)]</p>
-</dd>
-</dl>
+<p>EXAMPLE:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sage</span><span class="p">:</span> <span class="kn">from</span><span class="w"> </span><span class="nn">cpoly</span><span class="w"> </span><span class="kn">import</span> <span class="n">RootSystem</span><span class="p">,</span> <span class="n">greater_than</span>
+
+<span class="n">sage</span><span class="p">:</span> <span class="n">A2</span> <span class="o">=</span> <span class="n">RootSystem</span><span class="p">([</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">W</span> <span class="o">=</span> <span class="n">A2</span><span class="o">.</span><span class="n">weight_lattice</span><span class="p">()</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">V</span> <span class="o">=</span> <span class="n">A2</span><span class="o">.</span><span class="n">root_space</span><span class="p">()</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">Lambda</span> <span class="o">=</span> <span class="n">W</span><span class="o">.</span><span class="n">fundamental_weights</span><span class="p">()</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">alpha</span> <span class="o">=</span> <span class="n">V</span><span class="o">.</span><span class="n">simple_roots</span><span class="p">()</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">comp_poly</span> <span class="o">=</span> <span class="p">{(</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span> <span class="o">-</span><span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span> <span class="o">-</span><span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span> <span class="o">-</span><span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span> <span class="n">alpha</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
+<span class="n">sage</span><span class="p">:</span> <span class="n">A2</span><span class="o">.</span><span class="n">JH_facets</span><span class="p">(</span><span class="n">comp_poly</span><span class="p">)</span>
+<span class="p">[(</span><span class="o">-</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],),</span> <span class="p">(</span><span class="n">Lambda</span><span class="p">[</span><span class="mi">2</span><span class="p">],)]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">

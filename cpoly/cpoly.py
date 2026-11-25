@@ -970,9 +970,7 @@ class RootSystem(BaseRootSystem):
             - ``comp_poly`` -- a complementary polyhedron of the ambient root system, represented as a dictionary whose keys are Weyl chambers and whose values are points in the ambient root space
             - ``facet`` -- a facet of the ambient Weyl chamber decomposition, represented as a tuple of vertices in the weight lattice
 
-        OUTPUT:
-
-            A dictionary representing the complementary polyhedron induced on ``P^\perp``
+        OUTPUT: A dictionary representing the complementary polyhedron induced on ``P^\perp``
 
         EXAMPLE::
 
@@ -1147,7 +1145,9 @@ class RootSystem(BaseRootSystem):
         OUTPUT: A list of facets satisfying both ``J1`` and ``J2``, if ``check`` is ``True``, we validate that ``comp_poly`` is a complementary polyhedron.
 
         EXAMPLE::
+
             sage: from cpoly import RootSystem, greater_than
+
             sage: A2 = RootSystem(['A', 2])
             sage: W = A2.weight_lattice()
             sage: V = A2.root_space()
@@ -1175,7 +1175,9 @@ class RootSystem(BaseRootSystem):
         OUTPUT: A list of facets satisfying both ``J1`` and ``J2``.
 
         EXAMPLE::
+
             sage: from cpoly import RootSystem, greater_than
+            
             sage: A2 = RootSystem(['A', 2])
             sage: W = A2.weight_lattice()
             sage: V = A2.root_space()
