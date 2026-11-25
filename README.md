@@ -31,8 +31,8 @@ Alternatively, you can run it from your browser in a notebook here using binder.
 
 You can read the documentation of *CPoly* as:
 
-* a [webpage](https://emanuel-roth.github.io/cpoly/)
-* a [pdf](docs/_static/cpoly.pdf)
+* a [webpage](https://emanuel-roth.github.io/Cpoly/)
+* a [pdf](https://emanuel-roth.github.io/Cpoly/_static/cpoly.pdf)
 
 # How to cite CPoly
 

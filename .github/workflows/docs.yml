@@ -31,8 +31,22 @@ jobs:
         run: pip install -r docs/requirements.txt
 
       # SageMath is not installed here; docs/conf.py mocks it for autodoc.
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            latexmk texlive-latex-recommended texlive-latex-extra \
+            texlive-fonts-recommended texlive-luatex tex-gyre fonts-freefont-otf
+
       - name: Build HTML
         run: sphinx-build -b html -W --keep-going docs docs/_build/html
+
+      # The PDF is not committed; it is built here and served next to the
+      # HTML at _static/cpoly.pdf (linked from index.rst and the README).
+      - name: Build PDF
+        run: |
+          sphinx-build -M latexpdf docs docs/_build
+          cp docs/_build/latex/cpoly.pdf docs/_build/html/_static/cpoly.pdf
 
       - uses: actions/upload-pages-artifact@v3
         with:

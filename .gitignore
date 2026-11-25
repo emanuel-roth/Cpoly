@@ -10,3 +10,6 @@ dist/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# PDF documentation (built by GitHub Actions)
+docs/_static/cpoly.pdf
