@@ -25,7 +25,9 @@ The first line loads the SageMath environment, which is needed when working outs
 
 **Note:** the order matters. *CPoly* provides its own `RootSystem` class extending Sage's, so running `from sage.all import *` *after* `from cpoly import *` would overwrite it with Sage's `RootSystem`.
 
-Alternatively, you can run it from your browser in a notebook here using binder.
+Alternatively, you can try *CPoly* in your browser without installing anything: [launch the guide notebook on Binder](https://mybinder.org/v2/gh/emanuel-roth/CPolyBinder/HEAD?urlpath=lab/tree/cpoly.ipynb) (the binder repository is [here](https://github.com/emanuel-roth/CPolyBinder)). The notebook walks through the whole documentation.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/emanuel-roth/CPolyBinder/HEAD?urlpath=lab/tree/cpoly.ipynb)
 
 # Documentation
 

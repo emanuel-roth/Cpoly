@@ -29,6 +29,14 @@ The first line loads the SageMath environment (root systems, weight lattices, ra
 
    The order matters: ``cpoly`` provides its own ``RootSystem`` class extending Sage's. Importing ``from sage.all import *`` *after* ``from cpoly import *`` would overwrite it with Sage's ``RootSystem``, and the `CPoly` methods would not be available.
 
+Alternatively, you can try `CPoly` in your browser without installing anything: `launch the guide notebook on Binder <https://mybinder.org/v2/gh/emanuel-roth/CPolyBinder/HEAD?urlpath=lab/tree/cpoly.ipynb>`_ (the binder repository is `here <https://github.com/emanuel-roth/CPolyBinder>`__). The notebook walks through the whole documentation.
+
+.. only:: html
+
+   .. image:: https://mybinder.org/badge_logo.svg
+      :target: https://mybinder.org/v2/gh/emanuel-roth/CPolyBinder/HEAD?urlpath=lab/tree/cpoly.ipynb
+      :alt: Launch on Binder
+
 **Author**
 
 * `Emanuel Roth <https://emanuel-roth.github.io/>`_ (University of Edinburgh), mostly vibecoded with `ChatGPT <https://chatgpt.com/>`_ and `claude <https://claude.com/>`_.
