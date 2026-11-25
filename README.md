@@ -14,7 +14,7 @@
 
 To install it, make sure you have CPoly
 ```
-sage --pip install git+...
+sage --pip install git+https://github.com/emanuel-roth/CPoly.git
 ```
 and then, to get started, import everything needed from Sage followed by *CPoly*:
 ```
@@ -41,6 +41,6 @@ If you have used this code in any way, please consider citing it in the followin
 @software{cpoly,
   author = {Roth, Emanuel},
   title = {CPoly},
-  url = {...},
+  url = {https://emanuel-roth.github.io/Cpoly/},
 }
 ```

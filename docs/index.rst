@@ -29,6 +29,18 @@ The first line loads the SageMath environment (root systems, weight lattices, ra
 
 * `Emanuel Roth <https://emanuel-roth.github.io/>`_ (University of Edinburgh), mostly vibecoded with `ChatGPT <https://chatgpt.com/>`_ and `claude <https://claude.com/>`_.
 
+**How to cite CPoly**
+
+If you have used this code in any way, please consider citing it in the following way.
+
+.. code-block:: bibtex
+
+   @software{cpoly,
+      author = {Roth, Emanuel},
+      title = {CPoly},
+      url = {https://emanuel-roth.github.io/Cpoly/},
+   }
+
 Documentation
 =============
 
